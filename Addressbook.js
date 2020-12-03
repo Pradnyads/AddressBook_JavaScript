@@ -169,6 +169,16 @@ try {
       "pqrstedf99@gmail.com"
     )
   );
+  //finding a Person using name
+  let check = AddressBookArray.findIndex(
+    (contact) => contact.firstName == "Parth"
+  );
+  //updated Zip code
+  AddressBookArray[check].zip = "721 453";
+
+  //displaying Person details after being updated
+  console.log("Person details after being updated");
+  AddressBookArray.forEach((contact) => console.log(contact.toString()));
   AddressBookArray.forEach((contact) => console.log(contact.toString()));
 } catch (e) {
   console.log(e);
