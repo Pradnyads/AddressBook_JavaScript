@@ -180,6 +180,14 @@ try {
   console.log("Person details after being updated");
   AddressBookArray.forEach((contact) => console.log(contact.toString()));
   AddressBookArray.forEach((contact) => console.log(contact.toString()));
+
+   //Remove an element from an array at specified index
+   let info = AddressBookArray.findIndex(contact => contact.firstName == "Parth");
+
+   AddressBookArray.splice(info, 2);
+   console.log("Address book after being deleted person details");
+   AddressBookArray.forEach((contact) => console.log(contact.toString()));
+
 } catch (e) {
   console.log(e);
 }
