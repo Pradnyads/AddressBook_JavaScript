@@ -35,7 +35,7 @@ class AddressBook {
     return this._address;
   }
   set address(address) {
-    let addressRegex = RegExp("^[A-Za-z]{5,}$");
+    let addressRegex = RegExp("^[A-Za-z]{4,}$");
     if (addressRegex.test(address)) this._address = address;
     else throw "Invalid Address.";
   }
@@ -108,29 +108,68 @@ class AddressBook {
   }
 }
 try {
-  let contact = new AddressBook(
-    "John",
-    "Xyz",
-    "Shivaji",
-    "Mumbai",
-    "Maharashtra",
-    "418005",
-    "9156348225",
-    "abcdefgh@gmail.com"
+  let AddressBookArray = new Array();
+  AddressBookArray.push(
+    new AddressBook(
+      "John",
+      "Xyz",
+      "Shivaji",
+      "Mumbai",
+      "Maharashtra",
+      "418005",
+      "9156348225",
+      "abcdefgh@gmail.com"
+    )
   );
-  console.log(contact.toString());
-  let contact1 = new AddressBook(
-    "Prince",
-    "dqrs",
-    "Shivaji nagar",
-    "Pune",
-    "Maharashtra",
-    "510008",
-    "9853271455",
-    "pqrsdef@gmail.com"
+  AddressBookArray.push(
+    new AddressBook(
+      "Prince",
+      "Stqrs",
+      "Peth",
+      "Pune",
+      "Maharashtra",
+      "511208",
+      "9853271455",
+      "pqrsdef@gmail.com"
+    )
   );
-  
-  console.log(contact1.toString());
+  AddressBookArray.push(
+    new AddressBook(
+      "Priya",
+      "Xyzabcd",
+      "Nagar",
+      "Solapur",
+      "Maharashtra",
+      "366805",
+      "9125789542",
+      "apriyassp5@gmail.com"
+    )
+  );
+  AddressBookArray.push(
+    new AddressBook(
+      "Samiksha",
+      "Xyutdz",
+      "Navipeth",
+      "Dhule",
+      "Maharashtra",
+      "419884",
+      "9156347855",
+      "abcgejdh77@gmail.com"
+    )
+  );
+  AddressBookArray.push(
+    new AddressBook(
+      "Parth",
+      "Amkkgy",
+      "RamSham",
+      "Akola",
+      "Maharashtra",
+      "895624",
+      "7562843158",
+      "pqrstedf99@gmail.com"
+    )
+  );
+  AddressBookArray.forEach((contact) => console.log(contact.toString()));
 } catch (e) {
   console.log(e);
 }
