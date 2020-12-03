@@ -181,13 +181,25 @@ try {
   AddressBookArray.forEach((contact) => console.log(contact.toString()));
   AddressBookArray.forEach((contact) => console.log(contact.toString()));
 
-   //Remove an element from an array at specified index
-   let info = AddressBookArray.findIndex(contact => contact.firstName == "Parth");
+  //Remove an element from an array at specified index
+  let info = AddressBookArray.findIndex(
+    (contact) => contact.firstName == "Parth"
+  );
 
-   AddressBookArray.splice(info, 2);
-   console.log("Address book after being deleted person details");
-   AddressBookArray.forEach((contact) => console.log(contact.toString()));
+  AddressBookArray.splice(info, 2);
+  console.log("Address book after being deleted person details");
+  AddressBookArray.forEach((contact) => console.log(contact.toString()));
 
+  //Reduce function to find total of contacts in Address Book
+  var totalContacts = 0;
+  function findTotalContacts(AddressBookArray) {
+    if (AddressBookArray != null) totalContacts++;
+    return totalContacts;
+  }
+  AddressBookArray.reduce(findTotalContacts, 2);
+  console.log(
+    "Total number of contacts in AddressBook array  : " + totalContacts
+  );
 } catch (e) {
   console.log(e);
 }
