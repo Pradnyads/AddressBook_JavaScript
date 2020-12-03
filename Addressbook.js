@@ -169,6 +169,7 @@ try {
       "pqrstedf99@gmail.com"
     )
   );
+  
   //finding a Person using name
   let check = AddressBookArray.findIndex(
     (contact) => contact.firstName == "Parth"
@@ -200,6 +201,16 @@ try {
   console.log(
     "Total number of contacts in AddressBook array  : " + totalContacts
   );
+  // check for duplicate Person details
+  let Duplicate = 0;
+  function CheckDuplicates(contact) {
+    if (contact.firstName == "Priya") Duplicate++;
+    return Duplicate;
+  }
+  //using foreach checking the count for each contact
+  AddressBookArray.forEach((contact) => CheckDuplicates(contact));
+  if (Duplicate == 1) console.log("not a duplicate entry");
+  else console.log("duplicate entry");
 } catch (e) {
   console.log(e);
 }
