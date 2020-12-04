@@ -290,6 +290,7 @@ try {
   SortState();
   console.log("\nSorting of AddressBook By Zip");
   SortZip();
-} catch (e) {
+} 
+catch (e) {
   console.log(e);
 }
