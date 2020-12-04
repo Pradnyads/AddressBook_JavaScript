@@ -88,7 +88,7 @@ class AddressBook {
   }
   toString() {
     return (
-      "First Name: " +
+      "\nFirst Name: " +
       this.firstName +
       ", Last Name: " +
       this.lastName +
@@ -126,8 +126,8 @@ try {
       "Prince",
       "Stqrs",
       "Peth",
-      "Pune",
-      "Maharashtra",
+      "Jaipur",
+      "Rajasthan",
       "511208",
       "9853271455",
       "pqrsdef@gmail.com"
@@ -138,8 +138,8 @@ try {
       "Priya",
       "Xyzabcd",
       "Nagar",
-      "Solapur",
-      "Maharashtra",
+      "Vijapur",
+      "Karnataka",
       "366805",
       "9125789542",
       "apriyassp5@gmail.com"
@@ -150,7 +150,7 @@ try {
       "Samiksha",
       "Xyutdz",
       "Navipeth",
-      "Dhule",
+      "Pune",
       "Maharashtra",
       "419884",
       "9156347855",
@@ -169,7 +169,7 @@ try {
       "pqrstedf99@gmail.com"
     )
   );
-  
+
   //finding a Person using name
   let check = AddressBookArray.findIndex(
     (contact) => contact.firstName == "Parth"
@@ -199,7 +199,7 @@ try {
   }
   AddressBookArray.reduce(findTotalContacts, 2);
   console.log(
-    "Total number of contacts in AddressBook array  : " + totalContacts
+    "\nTotal number of contacts in AddressBook array  : " + totalContacts
   );
   // check for duplicate Person details
   let Duplicate = 0;
@@ -209,8 +209,24 @@ try {
   }
   //using foreach checking the count for each contact
   AddressBookArray.forEach((contact) => CheckDuplicates(contact));
-  if (Duplicate == 1) console.log("not a duplicate entry");
-  else console.log("duplicate entry");
+  if (Duplicate == 1) console.log("\nNot a Duplicate entry");
+  else console.log("\nDuplicate entry");
+
+  //Search person using city or state
+  //by city
+
+  console.log("\nContact by City Pune");
+  function ContactByCity(contact) {
+    if (contact.city == "Pune") console.log(contact.toString());
+  }
+  AddressBookArray.filter(ContactByCity);
+
+  //by state
+  console.log("\nContact By State Maharashtra");
+  let statecontact = AddressBookArray.filter((contact) =>
+    contact.state.includes("Maharashtra")
+  );
+  console.log(statecontact.toString());
 } catch (e) {
   console.log(e);
 }
