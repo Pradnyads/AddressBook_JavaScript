@@ -257,12 +257,39 @@ try {
   let addressStateMap = AddressBookArray.map(StateMap);
   console.log(addressStateMap);
 
-  //sorting by name and printing the array
-  console.log("Sorting by firstName");
-  for (let contact in AddressBookArray) {
-    AddressBookArray.sort(contact.firstName);
+  //sorting of Array
+  function SortName() {
+    for (let contact in AddressBookArray) {
+      AddressBookArray.sort(contact.firstName);
+    }
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
   }
-  AddressBookArray.forEach((contact) => console.log(contact.toString()));
+  function SortCity() {
+    for (let contact in AddressBookArray) {
+      AddressBookArray.sort(contact.city);
+    }
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
+  }
+  function SortState() {
+    for (let contact in AddressBookArray) {
+      AddressBookArray.sort(contact.state);
+    }
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
+  }
+  function SortZip() {
+    for (let contact in AddressBookArray) {
+      AddressBookArray.sort(contact.zip);
+    }
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
+  }
+  console.log("\nSorting of AddressBook by firstName");
+  SortName();
+  console.log("\nSorting Of AddressBook By City");
+  SortCity();
+  console.log("\nSorting of AddressBook By State");
+  SortState();
+  console.log("\nSorting of AddressBook By Zip");
+  SortZip();
 } catch (e) {
   console.log(e);
 }
