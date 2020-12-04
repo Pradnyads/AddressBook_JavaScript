@@ -214,19 +214,28 @@ try {
 
   //Search person using city or state
   //by city
-
-  console.log("\nContact by City Pune");
+  var numCity = 0;
+  var numState = 0;
+  console.log("\nPerson belongs to City Pune");
   function ContactByCity(contact) {
-    if (contact.city == "Pune") console.log(contact.toString());
+    if (contact.city == "Pune") {
+      console.log(contact.toString());
+      numCity++;
+    }
   }
   AddressBookArray.filter(ContactByCity);
+  console.log("\nPerson Belongs to city " + numCity);
 
   //by state
-  console.log("\nContact By State Maharashtra");
-  let statecontact = AddressBookArray.filter((contact) =>
-    contact.state.includes("Maharashtra")
-  );
-  console.log(statecontact.toString());
+  function ContactByState(contact) {
+    if (contact.state == "Maharashtra") {
+      console.log(contact.toString());
+      numState++;
+    }
+  }
+  console.log("Person belongs to State ");
+  AddressBookArray.filter(ContactByState);
+  console.log("\nPerson belongs to state " + numState);
 
   //Person Details by city or State using map
 
