@@ -256,6 +256,13 @@ try {
   }
   let addressStateMap = AddressBookArray.map(StateMap);
   console.log(addressStateMap);
+
+  //sorting by name and printing the array
+  console.log("Sorting by firstName");
+  for (let contact in AddressBookArray) {
+    AddressBookArray.sort(contact.firstName);
+  }
+  AddressBookArray.forEach((contact) => console.log(contact.toString()));
 } catch (e) {
   console.log(e);
 }
