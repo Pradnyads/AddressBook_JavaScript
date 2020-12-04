@@ -227,6 +227,26 @@ try {
     contact.state.includes("Maharashtra")
   );
   console.log(statecontact.toString());
+
+  //Person Details by city or State using map
+
+  function CityMap(contact) {
+    return contact.city + " -> " + contact.firstName + " " + contact.lastName;
+  }
+  let addressCityMap = AddressBookArray.map(CityMap);
+  console.log(addressCityMap);
+
+  function StateMap(contactDetails) {
+    return (
+      contactDetails.state +
+      " -> " +
+      contactDetails.firstName +
+      " " +
+      contactDetails.lastName
+    );
+  }
+  let addressStateMap = AddressBookArray.map(StateMap);
+  console.log(addressStateMap);
 } catch (e) {
   console.log(e);
 }
